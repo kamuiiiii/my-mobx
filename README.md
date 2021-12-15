@@ -1,4 +1,1 @@
-packages  
-├── application The react test app  
-├── mobx  
-└── mobx-react  
+The demo of how mobx works
