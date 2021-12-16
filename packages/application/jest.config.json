@@ -1,0 +1,27 @@
+{
+  "roots": [
+    "<rootDir>/src"
+  ],
+  "setupFilesAfterEnv": [
+    "<rootDir>/src/setupTests.ts"
+  ],
+  "resetMocks": true,
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/src/$1"
+  },
+  "testMatch": [
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)"
+  ],
+  "transform": {
+    "^.+\\.[jt]sx?$": "babel-jest"
+  },
+  "testEnvironment": "jsdom",
+  "testPathIgnorePatterns": [
+    "/node_modules/"
+  ],
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/**/*.d.ts"
+  ]
+}

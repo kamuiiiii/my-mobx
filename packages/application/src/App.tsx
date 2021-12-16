@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-      <h1>{store.a}</h1>
-      <button onClick={handle}>Store change</button>
+      <h1 data-testid="store.a">{store.a}</h1>
+      <button onClick={handle} data-testid="increase">Store change</button>
       {store.b < 5 ? <Foo /> : null}
     </>
   );
