@@ -2,3 +2,5 @@
 
 node_modules
 dist
+!packages/mobx/dist
+!packages/mobx-react/dist
