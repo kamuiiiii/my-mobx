@@ -1,5 +1,4 @@
-import { useCallback } from 'react';
-import React, { FC, useEffect, useMemo, useState } from 'react';
+import React, { FC, useEffect, useCallback, useState } from 'react';
 import { reaction } from 'mobx';
 
 export const observer = (component: FC) => {
