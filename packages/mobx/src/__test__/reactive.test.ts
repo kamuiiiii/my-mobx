@@ -14,4 +14,13 @@ describe('reaction', () => {
     store.a = 2;
     expect(callback).toHaveBeenCalledTimes(1);
   })
+
+  test("Reaction arguments works", () => {
+    callback = (newValue, oldValue) => {
+      expect(newValue).toBe(2);
+      expect(oldValue).toBe(1);
+    };
+    reaction(() => store.a, callback);
+    store.a = 2;
+  })
 })

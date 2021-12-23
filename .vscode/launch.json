@@ -5,11 +5,26 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "React",
       "type": "pwa-chrome",
       "request": "launch",
-      "name": "React",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}/packages/application"
+    },
+    {
+      "name": "Debug Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/packages/mobx",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/packages/mobx/node_modules/jest/bin/jest.js",
+        "--runInBand",
+        "--no-watchman"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229
     }
   ]
 }

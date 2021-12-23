@@ -27,12 +27,13 @@ export class Event {
     if (!eventMap) return
     const fns = eventMap[key];
     if (!fns || !fns.size) return
+    const value = target[key];
     fns.forEach(fn => {
       // 如果开启了 batch 模式（ action 调用栈深度不为 0），调用 saveBatchEvent 将 fn 储存起来，否则直接执行。
       if (globalState.batchDeep !== 0) {
-        globalState.saveBatchEvent(target, fn)
+        globalState.saveBatchEvent(target, fn, value)
       } else {
-        fn()
+        fn(value)
       }
     });
   }

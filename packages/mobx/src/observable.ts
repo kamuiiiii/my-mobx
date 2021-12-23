@@ -65,8 +65,9 @@ export const autorun = (fn: Function) => {
  * 2. 返回 dispose 方法，用于清除 reaction
  */
 export const reaction = (fn: Function, sideEffect: Function) => {
-  globalState.currentFn = sideEffect
-  fn()
+  const value: { old?: any } = {}
+  globalState.currentFn = (newValue: any) => sideEffect(newValue, value.old)
+  value.old = fn()
   globalState.currentFn = null
   const disposes = globalState.disposes
   const dispose = () => {
